@@ -1,0 +1,27 @@
+#include <cmath>
+#include <iostream>
+using namespace std;
+bool narcissistic( int value ){
+
+  int n = value;
+  int i = log10(value) + 1;
+  int sum = 0;
+  
+  while (n) {
+    sum += pow(n%10, i);
+    n /= 10;
+  }
+  
+  return sum == value;
+}
+int main(){
+	int value;
+	cout<<"Enter the number: ";
+	cin>>value;
+	if(narcissistic(value)==true){
+		cout<<"Number is narcisstic ";
+	}
+	else{
+		cout<<"Number is not narcisstic ";
+	}
+}
